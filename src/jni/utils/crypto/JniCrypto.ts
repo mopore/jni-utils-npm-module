@@ -83,7 +83,7 @@ export class Engine {
         return outputBase64;
     }
 
-    private encryptToBuffer(plaintext: string): Buffer {
+    encryptToBuffer(plaintext: string): Buffer {
         const nonce = crypto.randomBytes(12);
         const cipher = crypto.createCipheriv(AES_256_GCM_NAME, this._key, nonce, {});
         const cipherText = Buffer.concat([cipher.update(plaintext), cipher.final()]);
@@ -104,7 +104,7 @@ export class Engine {
         return decrypted; 
     }
 
-    private decryptFromBuffer(inputBuffer: Buffer): string {
+    decryptFromBuffer(inputBuffer: Buffer): string {
         const nonce = inputBuffer.slice(16, 28); 
         const cipherBuffer = inputBuffer.slice(28, -16); 
         const tag = inputBuffer.slice(-16);
