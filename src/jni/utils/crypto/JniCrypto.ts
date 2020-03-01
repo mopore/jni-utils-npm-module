@@ -93,25 +93,43 @@ export class Engine {
     }
 
     shortDecryptFromB64(cypherText: string): string {
-        const inputBuffer = Buffer.from(this._prefix.concat(cypherText), BASE_64_NAME);
-        const decrypted = this.decryptFromBuffer(inputBuffer);
-        return decrypted; 
+        try{
+            const inputBuffer = Buffer.from(this._prefix.concat(cypherText), BASE_64_NAME);
+            const decrypted = this.decryptFromBuffer(inputBuffer);
+            return decrypted; 
+        }
+        catch(error){
+            console.trace();
+            throw new Error(`Decryption error: ${error.message}`);
+        }
     }
 
     decryptFromB64(cypherText: string): string {
-        const inputBuffer = Buffer.from(cypherText, BASE_64_NAME); 
-        const decrypted = this.decryptFromBuffer(inputBuffer);
-        return decrypted; 
+        try{
+            const inputBuffer = Buffer.from(cypherText, BASE_64_NAME); 
+            const decrypted = this.decryptFromBuffer(inputBuffer);
+            return decrypted; 
+        }
+        catch(error){
+            console.trace();
+            throw new Error(`Decryption error: ${error.message}`);
+        }
     }
 
     decryptFromBuffer(inputBuffer: Buffer): string {
-        const nonce = inputBuffer.slice(16, 28); 
-        const cipherBuffer = inputBuffer.slice(28, -16); 
-        const tag = inputBuffer.slice(-16);
-    
-        const cipher = crypto.createDecipheriv(AES_256_GCM_NAME, this._key, nonce, {}); 
-        cipher.setAuthTag(tag);
-        const deCryptedBuffer = Buffer.concat([cipher.update(cipherBuffer), cipher.final()]);
-        return deCryptedBuffer.toString(UTF_8_NAME); 
+        try{
+            const nonce = inputBuffer.slice(16, 28); 
+            const cipherBuffer = inputBuffer.slice(28, -16); 
+            const tag = inputBuffer.slice(-16);
+        
+            const cipher = crypto.createDecipheriv(AES_256_GCM_NAME, this._key, nonce, {}); 
+            cipher.setAuthTag(tag);
+            const deCryptedBuffer = Buffer.concat([cipher.update(cipherBuffer), cipher.final()]);
+            return deCryptedBuffer.toString(UTF_8_NAME); 
+        }
+        catch(error){
+            console.trace();
+            throw new Error(`Decryption error: ${error.message}`);
+        }
     }
 }
