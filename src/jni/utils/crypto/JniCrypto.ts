@@ -17,7 +17,7 @@ type SecretPair = {
 
 export class Engine {
 
-    static version = 'v2.1';
+    static version = 'v2.1.1';
 
     private _key: Buffer;
     private _salt: Buffer;
