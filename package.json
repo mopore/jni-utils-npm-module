@@ -1,6 +1,6 @@
 {
   "name": "jni-utils",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Provides some utils used often used in other projects.",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "build": "rm -rf ./dist && tsc -b && chmod +x ./dist/jni/utils/crypto/KeyTool.js"
   },
   "bin" : { 
-    "jni-keytool": "dist/KeyTool.js"
+    "jni-keytool": "dist/jni/utils/crypto/KeyTool.js"
   },
   "keywords": [
     "typescript",
