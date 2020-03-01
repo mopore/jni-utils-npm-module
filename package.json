@@ -1,19 +1,38 @@
 {
-  "name": "jni-ts-template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "jni-utils",
+  "version": "0.1.0",
+  "description": "Provides some utils used often used in other projects.",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf ./dist && tsc -b",
+    "publish": "npm publish"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bin" : { "keytool" : "dist/KeyTool.js" },
+  "keywords": [
+    "typescript",
+    "vscode",
+    "utils"
+  ],
+  "author": "Jens Nixdorf",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^13.7.7",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
     "eslint": "^6.8.0",
     "typescript": "^3.8.3"
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JensNixdorf/jni-utils-npm-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JensNixdorf/jni-utils-npm-module/issues"
+  },
+  "homepage": "https://github.com/JensNixdorf/jni-utils-npm-module#readme"
 }

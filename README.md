@@ -1,9 +1,6 @@
 # What is this?
 
-Provides some utils used often in other projects.
-
-# What's the motivation?
-
+Provides some utils used often used in other projects.
 Resusing an CLI KeyTool, encyrption code and DateUtils as an NPM module
 
 # Installation
