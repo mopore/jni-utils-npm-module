@@ -17,7 +17,7 @@ type SecretPair = {
 
 export class Engine {
 
-    static version = 'v2.1.1';
+    static version = 'v2.2';
 
     private _key: Buffer;
     private _salt: Buffer;
@@ -93,27 +93,15 @@ export class Engine {
     }
 
     shortDecryptFromB64(cypherText: string): string {
-        try{
-            const inputBuffer = Buffer.from(this._prefix.concat(cypherText), BASE_64_NAME);
-            const decrypted = this.decryptFromBuffer(inputBuffer);
-            return decrypted; 
-        }
-        catch(error){
-            console.trace();
-            throw new Error(`Decryption error: ${error.message}`);
-        }
+        const inputBuffer = Buffer.from(this._prefix.concat(cypherText), BASE_64_NAME);
+        const decrypted = this.decryptFromBuffer(inputBuffer);
+        return decrypted; 
     }
 
     decryptFromB64(cypherText: string): string {
-        try{
-            const inputBuffer = Buffer.from(cypherText, BASE_64_NAME); 
-            const decrypted = this.decryptFromBuffer(inputBuffer);
-            return decrypted; 
-        }
-        catch(error){
-            console.trace();
-            throw new Error(`Decryption error: ${error.message}`);
-        }
+        const inputBuffer = Buffer.from(cypherText, BASE_64_NAME); 
+        const decrypted = this.decryptFromBuffer(inputBuffer);
+        return decrypted; 
     }
 
     decryptFromBuffer(inputBuffer: Buffer): string {
@@ -128,7 +116,6 @@ export class Engine {
             return deCryptedBuffer.toString(UTF_8_NAME); 
         }
         catch(error){
-            console.trace();
             throw new Error(`Decryption error: ${error.message}`);
         }
     }
