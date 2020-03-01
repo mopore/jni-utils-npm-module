@@ -1,3 +1,5 @@
+import { AssertionError } from "assert";
+
 const SATURDAY_INDEX = 6;
 const SUNDAY_INDEX = 0;
 const MONDAY_INDEX = 1;
@@ -5,8 +7,6 @@ const DAYS_UNTIL_LAST_MONDAY = 6;
 const FOR_US_CORRECTION = 1;
 
 export class DateUtils {
-
-
     static toIsoWithMinutes( sourceDate: Date ): string{
         const result: string = sourceDate.toISOString(). // would result in: '2012-11-04T14:51:06.157Z'
         replace(/T/, ' ').      // replace T with a space
@@ -184,5 +184,40 @@ export class DateUtils {
         const onWeekEnd = dayInWeek === SUNDAY_INDEX || dayInWeek == SATURDAY_INDEX; 
         return onWeekEnd;
     }
+}
 
+export class Assert {
+
+    static isDefined<T>(val: T): asserts val is NonNullable<T> {
+        if (val === undefined || val === null) {
+            throw new AssertionError(
+                {
+                    message: `Expected 'val' to be defined, but received ${val}`,
+                    expected: 'A value which is not "null", "undefined" nor "never"'
+                }
+            );
+        }
+    }
+
+    static isFilledArray<T>(val: T[]): T[] {
+        if ( val.length < 1 ) {
+            throw new AssertionError(
+                {
+                    message: `Expected array not to be empty, but "length < 0"`,
+                    expected: 'An array with at least one entry.'
+                }
+            );
+        }
+        return val;
+    }
+}
+
+export class Sleep{
+    static delayProcessing(seconds: number): Promise<void>{
+        return new Promise(function(resolve) {
+            setTimeout(function() {
+                resolve();
+            }, seconds * 1000);
+        });
+    }
 }
