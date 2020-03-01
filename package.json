@@ -1,15 +1,14 @@
 {
   "name": "jni-utils",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Provides some utils used often used in other projects.",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf ./dist && tsc -b",
-    "publish": "npm publish"
+    "build": "rm -rf ./dist && tsc -b"
   },
-  "bin" : { "keytool" : "dist/KeyTool.js" },
+  "bin" : { "jni-keytool" : "dist/KeyTool.js" },
   "keywords": [
     "typescript",
     "vscode",
