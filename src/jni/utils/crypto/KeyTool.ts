@@ -135,5 +135,22 @@ const checkKeys = (): void => {
     }
 }
 
-KeyToolHelper.clearScreen();
-checkKeys();
+const myValue = ((): (string | undefined) => {
+    const args = process.argv.slice(2);
+    if ( args.length > 0){
+        if ( args.length === 2){
+            if ( args[0] === '-c')
+                return args[1]
+        }
+        console.error('Usage: -c <value>');
+        process.exit(1);
+    }
+})();
+
+if (myValue){
+    console.log(`Have my value will not do anything: ${myValue}`);
+}
+else {
+    KeyToolHelper.clearScreen();
+    checkKeys();
+}

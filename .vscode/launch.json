@@ -12,7 +12,8 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/src/KeyTool.ts",
+            "program": "${workspaceFolder}/src/jni/utils/crypto/KeyTool.ts",
+            "args": ["-c","This is a test"],
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
