@@ -1,14 +1,14 @@
 # What is this?
 
-This is template for TypeScript project in VS Code with linting.
+Provides some utils used often in other projects.
 
 # What's the motivation?
 
-To have an easier start for my projects.
+Resusing an CLI KeyTool, encyrption code and DateUtils as an NPM module
 
 # Installation
 Just use it as template.
-`npm install sample`
+`npm install jni-utils`
 
 # How to use
 ```
