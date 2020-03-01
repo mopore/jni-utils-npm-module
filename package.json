@@ -1,12 +1,12 @@
 {
   "name": "jni-utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Provides some utils used often used in other projects.",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf ./dist && tsc -b && chmod +x ./dist/KeyTool.js"
+    "build": "rm -rf ./dist && tsc -b && chmod +x ./dist/jni/utils/crypto/KeyTool.js"
   },
   "bin" : { 
     "jni-keytool": "dist/KeyTool.js"

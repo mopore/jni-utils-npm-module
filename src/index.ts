@@ -1,5 +1,3 @@
-import { JniCrypto } from "./JniCrypto";
+import * as JniCrypto from "./jni/utils/crypto/JniCrypto";
 
-export const createJniCrypto = (passphrase?: string): JniCrypto => {
-    return new JniCrypto(passphrase);
-}
+export {JniCrypto};
