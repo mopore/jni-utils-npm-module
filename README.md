@@ -4,10 +4,15 @@ Provides some utils used often used in other projects.
 Resusing an CLI KeyTool, encyrption code and DateUtils as an NPM module
 
 # Installation
-Just use it as template.
+Run npm install for a local installation in your project.
 `npm install jni-utils`
 
 # How to use
+
+Make sure a folder `secrets` is created in your project directory.
+
+## Keytool
+Then use the following command to start the keytool from your cli
 ```
-    The code you would write
+    npx jni-keytool
 ```

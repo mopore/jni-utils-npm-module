@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { createInterface } from "readline";
 import { KeyToolHelper } from "./KeyToolHelper";
 
@@ -21,8 +23,14 @@ const exitKeyTool = (): void => {
 const createKeysWithPassphrase = ( callback: (() => void) ): void => {
     KeyToolHelper.clearScreen();
     readline.question( "Enter your passphrase for key creation: ", ( input: string) => {
-        KeyToolHelper.createKeys(input)
-        callback();
+        try{
+            KeyToolHelper.createKeys(input)
+            callback();
+        }
+        catch (error){
+            console.error(`Keys could not be created due to: ${error}.\n Check your permissions.`);
+            KeyToolHelper.pressAnyKeyToContinue(readline, exitKeyTool);
+        }
     });
 }
 
@@ -106,8 +114,8 @@ const checkKeys = (): void => {
     const noKeys = ! KeyToolHelper.keysExists();
     if ( noKeys ) {
         KeyToolHelper.headerLine();
-        console.info( 'This tool needs to operate on a valid set of crypto keys in you project.')
-        readline.question( "No valid keys could be found. Create a new set of keys? (y/n)...", (input) => {
+        console.info( 'This tool needs a valid set of crypto keys in a folder "secrets" located in your project to operate.\nNo folder/valid keys set could be detacted though.')
+        readline.question( "\nCreate a new set of keys? (y/n)...", (input) => {
             const createKeys = (input.trim().toLowerCase()) === 'y';
             if ( createKeys){
                 createKeysWithPassphrase((): void =>{

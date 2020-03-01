@@ -6,8 +6,9 @@ const BASE_64_NAME = 'base64';
 const UTF_8_NAME = 'utf-8';
 const SHA_256_NAME = 'sha256';
 
-const PATH_TO_KEY = './secrets/KeyV2.secret';
-const PATH_TO_SALT = './secrets/SaltV2.secret'
+const PATH_TO_SECRETS = './secrets';
+const PATH_TO_KEY = `${PATH_TO_SECRETS}/KeyV2.secret`;
+const PATH_TO_SALT = `${PATH_TO_SECRETS}/SaltV2.secret`;
 
 type SecretPair = {
     key: Buffer;
@@ -44,6 +45,14 @@ export class JniCrypto {
 
         const key = crypto.pbkdf2Sync(passphrase, saltBuffer, 40000, 32, SHA_256_NAME);
 
+        if (!fs.existsSync(PATH_TO_SECRETS)){
+            try{
+                fs.mkdirSync(PATH_TO_SECRETS)
+            }
+            catch(error){
+                throw new Error(`Could not created folder for secrets: ${PATH_TO_SECRETS}`);
+            }
+        }
         fs.writeFileSync(PATH_TO_KEY, key);
         fs.writeFileSync(PATH_TO_SALT, saltBuffer);
     }
