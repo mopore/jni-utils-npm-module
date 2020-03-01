@@ -1,11 +1,11 @@
-import { JniCrypto } from "./JniCrypto";
+import { Engine } from "./JniCrypto";
 import { Interface } from "readline";
 
 export class KeyToolHelper {
 
     static keysExists(): boolean {
         try {
-            new JniCrypto();
+            new Engine();
             return true;
         }
         catch ( error ) {
@@ -14,21 +14,21 @@ export class KeyToolHelper {
     }
 
     static createKeys(passphrase: string): void{
-        JniCrypto.createSecrets(passphrase);
+        Engine.createSecrets(passphrase);
     }
 
     static encrypt( text: string): string {
-        const encrypted = new JniCrypto().shortEncryptToB64(text);
+        const encrypted = new Engine().shortEncryptToB64(text);
         return encrypted;
     }
     
     static decrypt( encrypted: string ): string {
-        const decrypted = new JniCrypto().shortDecryptFromB64( encrypted );
+        const decrypted = new Engine().shortDecryptFromB64( encrypted );
         return decrypted;
     }
 
     static headerLine(): void {
-        console.info( `\n🔑  J N I   C R Y P T O  (${JniCrypto.version})` );
+        console.info( `\n🔑  J N I   C R Y P T O  (${Engine.version})` );
         console.info( '-------------------------------\n' );
     }
 

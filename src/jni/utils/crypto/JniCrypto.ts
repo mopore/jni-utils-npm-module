@@ -15,9 +15,9 @@ type SecretPair = {
     salt: Buffer;
 }
 
-export class JniCrypto {
+export class Engine {
 
-    static version = 'v2.0';
+    static version = 'v2.1';
 
     private _key: Buffer;
     private _salt: Buffer;
@@ -25,16 +25,16 @@ export class JniCrypto {
 
     constructor(passphrase?: string){
         if (passphrase){
-            JniCrypto.createSecrets(passphrase);
+            Engine.createSecrets(passphrase);
         }
-        const secretPair = JniCrypto.readSecrets();
+        const secretPair = Engine.readSecrets();
         this._key = secretPair.key;
         this._salt = secretPair.salt;
         this._prefix = this.encryptToB64('').substr(0,21);
     }
 
     static createSecrets( passphrase: string ): void{
-        const sidekick = JniCrypto.version;
+        const sidekick = Engine.version;
 
         const saltBuffer = ((): Buffer => {
             const rawBuffer = Buffer.concat([Buffer.from(sidekick),Buffer.alloc(16)],16);
