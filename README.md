@@ -1,7 +1,10 @@
 # What is this?
 
-Provides some utils used often used in other projects.
-Resusing an CLI KeyTool, encyrption code and DateUtils as an NPM module
+Provides some utils I used often in my current projects.
+These include a 
+* KeyTool with a text UI and a CLI option
+* Wrapper for the Node crypto engine to customized for my purposes
+* Code to easier operate with dates, delays and arrays
 
 # Installation
 Run npm install for a local installation in your project.
@@ -9,15 +12,16 @@ Run npm install for a local installation in your project.
 
 # How to use
 
-Make sure a folder `secrets` is created in your project directory.
-
 ## Keytool
-Then use the following command to start the KeyTool Text UI from your cli
+Use the following command to start the KeyTool text UI from terminal.
 ```
     npx jni-keytool
 ```
+If started for the first time in your project. The tool will ask to create a new set of keys.
+Without this set of keys the tool will not be able to encrypt/decrypt.
+If you allow to create the key set. The following menu will appear.
 
-The text offers the following 4 options
+The text UI offers the following 4 options
 ```
 🔑  J N I   C R Y P T O  (v2.2)
 -------------------------------
@@ -35,9 +39,17 @@ However, given your set of keys is based on the same passphrase as the one used 
 the decryption will always work.
 
 The recreate your keyset option (1) will create a new set of keys, overwritten existing keys,
-if existing and create a folder ./secrets in the project if not already existing.
+if existing and create a folder `./secrets` in the project if not already existing.
 
-Creating a pair for keys is possible without text UI by using the following command
+Creating a pair for keys is also possible without text UI by using the following command
 ```
     npx jni-keytool --createKeys "Your passphrase to create a reproducable set of keys"
 ```
+
+## JniCrypto
+
+The crypto wrapper for node is available via `JniCrypto.Engine` and offers the same functionality
+on coding level as the KeyTool. In fact. The KeyTool obiously makes use of the wrapper.
+
+## JniCommon
+The util code in the JniCommon is pretty much self-explaining.
