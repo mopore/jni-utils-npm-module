@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Keytool",
+            "name": "Keytool UI",
             "console": "integratedTerminal",
             "type": "node",
             "request": "launch",
@@ -13,7 +13,20 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/src/jni/utils/crypto/KeyTool.ts",
-            "args": ["-c","This is a test"],
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ]
+        },
+        {
+            "name": "Keytool w/ args",
+            "console": "integratedTerminal",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/jni/utils/crypto/KeyTool.ts",
+            "args": ["--createKeys","Florian"],
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
