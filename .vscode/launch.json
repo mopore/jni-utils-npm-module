@@ -30,6 +30,20 @@
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
+        },
+        {
+            "name": "Test CreateDaysPerWeek",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/jni/utils/common/TestCreateDaysPerWeek.ts",
+            "env": {"CONFIG_FILE_ENV":"jni-dev", "TZ":"UTC"},
+            // "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ]
         }
     ]
 }

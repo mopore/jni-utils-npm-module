@@ -195,13 +195,21 @@ export class DateUtils {
                 currentWeek = [...currentWeek, nextDay ];
             }
             currentDay = nextDay;
-            if ( currentDay.getTime() === end.getTime() ){
+            if ( DateUtils.isSameDay(currentDay, end) ){
                 weeks = [...weeks, currentWeek]
             }
         }
 
         return weeks;
     }
+
+    static isSameDay( left: Date, right: Date ): boolean {
+        return left.getDate() === right.getDate() &&
+        left.getMonth === right.getMonth &&
+        left.getFullYear === right.getFullYear;
+    }
+
+
 
     static daysBetweenDates( firstDate: Date, secondDate: Date ): number {
         const diffTime = Math.abs( secondDate.getTime() - firstDate.getTime() );
