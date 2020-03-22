@@ -195,7 +195,7 @@ export class DateUtils {
                 currentWeek = [...currentWeek, nextDay ];
             }
             currentDay = nextDay;
-            if ( currentDay === end ){
+            if ( currentDay.getTime() === end.getTime() ){
                 weeks = [...weeks, currentWeek]
             }
         }
