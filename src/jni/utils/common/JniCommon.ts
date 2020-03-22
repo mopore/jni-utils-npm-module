@@ -83,6 +83,25 @@ export class DateUtils {
         return subject;
     }
 
+    static getLatestSunday( day: Date ): Date {
+
+        if ( day.getDay() === SUNDAY_INDEX )
+            return day;
+
+        const FRIDAY_INDEX = 5;
+        const ONE_DAY = 1;
+        const ONE_WEEK = 7;
+        const WEEKEND = 2;
+
+        const subject = day;
+        while ( subject.getDay() !== FRIDAY_INDEX ) {
+            subject.setDate( subject.getDate() - ONE_DAY );
+        }
+
+        subject.setDate( subject.getDate() - ONE_WEEK + WEEKEND );
+        return subject;
+    }
+
     static intersectDates( sourceDays: Date[], notOlder: Date, notYounger: Date ): Date[] {
         const sortedDays = DateUtils.sortOldestFirst( sourceDays );
         let results: Date[] = [];
