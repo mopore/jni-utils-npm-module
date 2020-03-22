@@ -43,7 +43,7 @@ if existing and create a folder `./secrets` in the project if not already existi
 
 Creating a pair for keys is also possible without text UI by using the following command
 ```
-    npx jni-keytool --createKeys "Your passphrase to create a reproducable set of keys"
+npx jni-keytool --createKeys "Your passphrase to create a reproducable set of keys"
 ```
 
 ## JniCrypto
