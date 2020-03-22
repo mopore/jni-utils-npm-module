@@ -10,7 +10,7 @@ if (passedValue){
     console.log('KeyTool called to create a key pair.');
     try {
         JniCrypto.Engine.createSecrets(passedValue);
-        console.log('Key pair succussfully created...');
+        console.log('Key pair successfully created...');
     }
     catch (error){
         console.error(`Could not create keys due to: ${error.message}`);
