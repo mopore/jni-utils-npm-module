@@ -1,5 +1,6 @@
 import { AssertionError } from "assert";
 
+const FRIDAY_INDEX = 5;
 const SATURDAY_INDEX = 6;
 const SUNDAY_INDEX = 0;
 const MONDAY_INDEX = 1;
@@ -69,7 +70,6 @@ export class DateUtils {
     }
     
     static getSundayOfPenultimateWeek( day: Date ): Date {
-        const FRIDAY_INDEX = 5;
         const ONE_DAY = 1;
         const TWO_WEEKS = 14;
         const WEEKEND = 2;
@@ -88,7 +88,6 @@ export class DateUtils {
         if ( day.getDay() === SUNDAY_INDEX )
             return day;
 
-        const FRIDAY_INDEX = 5;
         const ONE_DAY = 1;
         const ONE_WEEK = 7;
         const WEEKEND = 2;
@@ -99,6 +98,18 @@ export class DateUtils {
         }
 
         subject.setDate( subject.getDate() - ONE_WEEK + WEEKEND );
+        return subject;
+    }
+
+    static getLatestFriday( day: Date ): Date {
+        if ( day.getDay() === FRIDAY_INDEX )
+            return day;
+
+        const ONE_DAY = 1;
+        const subject = day;
+        while ( subject.getDay() !== FRIDAY_INDEX ) {
+            subject.setDate( subject.getDate() - ONE_DAY );
+        }
         return subject;
     }
 
