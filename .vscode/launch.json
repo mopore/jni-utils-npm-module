@@ -2,7 +2,7 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.3.0",
+    "version": "0.2.0",
     "configurations": [
         {
             "name": "Keytool UI",
@@ -54,7 +54,7 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/src/jni/utils/crypto/KeyTool.ts",
-            "args": ["--decrypt-base64","WlUydVM0QXZ5aThZSExENQJrvl39y3FV9yD67scJHlFgtr2vQcX2+0xxoiRHigxT5Z07rQDAfN4AMg=="],
+            "args": ["--decrypt-base64","WlUydVM0QXZ5aThZSExENfdRatU/MQJo+sdRpKsXai1aGqpmAVuAMU7Io5wcxYp6xR7CG8lPOUus"],
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
