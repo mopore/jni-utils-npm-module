@@ -7,7 +7,6 @@ import { JniCrypto } from "../../..";
 const argCommand = findCreatePassphraseInfo();
 
 if (argCommand){
-    console.log('KeyTool called to create a key pair.');
     try {
         switch (argCommand.type) {
             case CREATE_KEYS_COMMAND: {
