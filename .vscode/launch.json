@@ -2,7 +2,7 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
+    "version": "0.3.0",
     "configurations": [
         {
             "name": "Keytool UI",
@@ -18,7 +18,7 @@
             ]
         },
         {
-            "name": "Keytool w/ args",
+            "name": "Keytool --create-keys",
             "console": "integratedTerminal",
             "type": "node",
             "request": "launch",
@@ -26,11 +26,39 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/src/jni/utils/crypto/KeyTool.ts",
-            "args": ["--createKeys","Florian"],
+            "args": ["--create-keys","My passphrase"],
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
         },
+        {
+            "name": "Keytool --encrypt-base64",
+            "console": "integratedTerminal",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/jni/utils/crypto/KeyTool.ts",
+            "args": ["--encrypt-base64","My secret text"],
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ]
+        },
+        {
+            "name": "Keytool --decrypt-base64",
+            "console": "integratedTerminal",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/jni/utils/crypto/KeyTool.ts",
+            "args": ["--decrypt-base64","WlUydVM0QXZ5aThZSExENQJrvl39y3FV9yD67scJHlFgtr2vQcX2+0xxoiRHigxT5Z07rQDAfN4AMg=="],
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ]
+        },                
         {
             "name": "Test CreateDaysPerWeek",
             "type": "node",

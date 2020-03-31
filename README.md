@@ -13,6 +13,8 @@ Run npm install for a local installation in your project.
 # How to use
 
 ## Keytool
+
+### Text UI
 Use the following command to start the KeyTool text UI from terminal.
 ```
     npx jni-keytool
@@ -41,9 +43,21 @@ the decryption will always work.
 The recreate your keyset option (1) will create a new set of keys, overwritten existing keys,
 if existing and create a folder `./secrets` in the project if not already existing.
 
-Creating a pair for keys is also possible without text UI by using the following command
+### CLI-only commands
+
+Creating a pair for keys is also possible without text UI by using the following command:
 ```
-npx jni-keytool --createKeys "Your passphrase to create a reproducable set of keys"
+npx jni-keytool --create-keys "Your passphrase to create a reproducable set of keys"
+```
+
+To encrypt AND base-64 a string via CLI with already created keys:
+```
+npx jni-keytool --encrypt-base64 "The string you want to encrypt"
+```
+
+To decrypt an encrypted AND base-64'ed text via CLI with already created keys:
+```
+npx jni-keytool --decrypt-base64 "The text you want to decrypt"
 ```
 
 ## JniCrypto
