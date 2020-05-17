@@ -222,6 +222,21 @@ export class DateUtils {
         const onWeekEnd = dayInWeek === SUNDAY_INDEX || dayInWeek == SATURDAY_INDEX; 
         return onWeekEnd;
     }
+
+    private static createDateArray(startDate: Date, endDate: Date): Date[]{
+        if (endDate <= startDate)
+            throw new Error( `Enddate must be later than start date. Start ${startDate}, End ${endDate}`);
+        
+        let results: Date[] = [startDate];
+        let current = new Date( DateUtils.toIsoDay( startDate ) );
+        current.setDate( current.getDate() +1 );
+        while (current <= endDate) {
+            results = [ ...results, current ];
+            current = new Date( DateUtils.toIsoDay( current ) );
+            current.setDate( current.getDate() +1 );
+        } 
+        return results;
+    }
 }
 
 export class Assert {
