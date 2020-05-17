@@ -223,7 +223,7 @@ export class DateUtils {
         return onWeekEnd;
     }
 
-    private static createDateArray(startDate: Date, endDate: Date): Date[]{
+    static createDateArray(startDate: Date, endDate: Date): Date[]{
         if (endDate <= startDate)
             throw new Error( `Enddate must be later than start date. Start ${startDate}, End ${endDate}`);
         
