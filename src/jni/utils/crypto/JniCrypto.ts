@@ -1,4 +1,4 @@
-import * as crypto from "crypto";
+import crypto from "crypto";
 import fs from "fs";
 
 const AES_256_GCM_NAME = 'aes-256-gcm';
@@ -118,5 +118,10 @@ export class Engine {
         catch(error){
             throw new Error(`Decryption error: ${error.message}`);
         }
+    }
+
+    hash(text: string): string {
+        const hashed =  crypto.createHash('md5').update(text).digest('hex');
+        return hashed;
     }
 }

@@ -6,6 +6,10 @@ These include a
 * Wrapper for the Node crypto engine to customized for my purposes
 * Code to easier operate with dates, delays and arrays
 
+# Release History
+v1.6.0 Simplified hash function added to JniCrypto
+
+
 # Installation
 Run npm install for a local installation in your project.
 `npm install jni-utils`
