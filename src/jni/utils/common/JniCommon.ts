@@ -84,29 +84,17 @@ export class DateUtils {
     }
 
     static getLatestSunday( day: Date ): Date {
-
-        if ( day.getDay() === SUNDAY_INDEX )
-            return day;
-
         const ONE_DAY = 1;
-        const ONE_WEEK = 7;
-        const WEEKEND = 2;
-
-        const subject = day;
-        while ( subject.getDay() !== FRIDAY_INDEX ) {
+        const subject = new Date(day);
+        while ( subject.getDay() !== SUNDAY_INDEX ) {
             subject.setDate( subject.getDate() - ONE_DAY );
         }
-
-        subject.setDate( subject.getDate() - ONE_WEEK + WEEKEND );
         return subject;
     }
 
     static getLatestFriday( day: Date ): Date {
-        if ( day.getDay() === FRIDAY_INDEX )
-            return day;
-
         const ONE_DAY = 1;
-        const subject = day;
+        const subject = new Date(day);
         while ( subject.getDay() !== FRIDAY_INDEX ) {
             subject.setDate( subject.getDate() - ONE_DAY );
         }

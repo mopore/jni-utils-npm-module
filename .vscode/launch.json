@@ -72,6 +72,20 @@
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
-        }
+        },
+        {
+            "name": "Quick Test App",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/QuickTestApp.ts",
+            "env": {"CONFIG_FILE_ENV":"jni-dev", "TZ":"UTC"},
+            // "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ]
+        }        
     ]
 }
