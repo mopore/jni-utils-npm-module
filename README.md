@@ -7,6 +7,7 @@ These include a
 * Code to easier operate with dates, delays and arrays
 
 # Release History
+v1.6.2 Improved readme information for JniCrypto usage
 v1.6.1 Bugfix for getLatestSunday in DateUtils
 v1.6.0 Simplified hash function added to JniCrypto
 
