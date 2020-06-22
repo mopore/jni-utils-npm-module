@@ -70,5 +70,17 @@ npx jni-keytool --decrypt-base64 "The text you want to decrypt"
 The crypto wrapper for node is available via `JniCrypto.Engine` and offers the same functionality
 on coding level as the KeyTool. In fact. The KeyTool obiously makes use of the wrapper.
 
+```
+import { JniCrypto } from "jni-utils";
+
+const crypto = new JniCrypto.Engine();
+
+const encryptedText = this.crypto.shortEncryptToB64("Simple Text");
+const decryptedText = this.crypto.shortDecryptFromB64(encryptedText);
+
+```
+
+
+
 ## JniCommon
 The util code in the JniCommon is pretty much self-explaining.
