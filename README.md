@@ -7,6 +7,7 @@ These include a
 * Code to easier operate with dates, delays and arrays
 
 # Release History
+v1.6.4 Actual content of v1.6.3 
 v1.6.3 Bugfixes for Duplicate weeks in days per week function and function for same day. 
 v1.6.2 Improved readme information for JniCrypto usage
 v1.6.1 Bugfix for getLatestSunday in DateUtils
