@@ -77,8 +77,8 @@ import { JniCrypto } from "jni-utils";
 
 const crypto = new JniCrypto.Engine();
 
-const encryptedText = this.crypto.shortEncryptToB64("Simple Text");
-const decryptedText = this.crypto.shortDecryptFromB64(encryptedText);
+const encryptedText = crypto.shortEncryptToB64("Simple Text");
+const decryptedText = crypto.shortDecryptFromB64(encryptedText);
 
 ```
 
