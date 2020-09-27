@@ -169,9 +169,11 @@ export class DateUtils {
         
         let weeks: Date[][] = [];
         let currentDay = start;
+
         let currentWeek: Date[] = [currentDay];
 
-        while (currentDay <= end ){
+        while (currentDay < end ){
+
             let nextDay = nextDayInCurrentWeek( currentDay );
             if ( nextDay ){
                 currentWeek = [...currentWeek, nextDay ];
@@ -193,10 +195,9 @@ export class DateUtils {
 
     static isSameDay( left: Date, right: Date ): boolean {
         return left.getDate() === right.getDate() &&
-        left.getMonth === right.getMonth &&
-        left.getFullYear === right.getFullYear;
+        left.getMonth() === right.getMonth() &&
+        left.getFullYear() === right.getFullYear();
     }
-
 
 
     static daysBetweenDates( firstDate: Date, secondDate: Date ): number {
