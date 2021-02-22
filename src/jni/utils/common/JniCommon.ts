@@ -199,7 +199,6 @@ export class DateUtils {
         left.getFullYear() === right.getFullYear();
     }
 
-
     static daysBetweenDates( firstDate: Date, secondDate: Date ): number {
         const diffTime = Math.abs( secondDate.getTime() - firstDate.getTime() );
         const diffDays = Math.ceil( diffTime / (1000 * 60 * 60 * 24) ); 

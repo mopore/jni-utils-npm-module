@@ -9,9 +9,10 @@ These include a
 # Release History
 
 ## v1.9.0
- - New DatUtils.isSameDay function
+ - New DateUtils.isSameDay function
  - Introduction of jest.js
 
+## Older Versions
 v1.8.0 New today() function.
 v1.7.2 Messed up the release process again.
 v1.7.1 Namenormalizer actually exposed.
