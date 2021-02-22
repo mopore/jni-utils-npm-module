@@ -7,6 +7,11 @@ These include a
 * Code to easier operate with dates, delays and arrays
 
 # Release History
+
+## v1.9.0
+ - New DatUtils.isSameDay function
+ - Introduction of jest.js
+
 v1.8.0 New today() function.
 v1.7.2 Messed up the release process again.
 v1.7.1 Namenormalizer actually exposed.
