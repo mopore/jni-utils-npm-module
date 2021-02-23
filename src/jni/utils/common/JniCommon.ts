@@ -111,7 +111,7 @@ export class DateUtils {
         // condition 1: Dates are not older than 'notOlder'
         // condition 2: Dates are not younger than 'notYounger'
         let condition1 = day >= notOlder;
-        let condition2 = day < notYounger;
+        let condition2 = day <= notYounger;
 
         while( condition2 ){
             if (condition1 && condition2 ) {
@@ -121,7 +121,7 @@ export class DateUtils {
             index++;
             day = sortedDays[index];
             condition1 = day >= notOlder;
-            condition2 = day < notYounger;          
+            condition2 = day <= notYounger;          
         }
 
         return results;

@@ -8,8 +8,11 @@ These include a
 
 # Release History
 
+## v1.9.1
+ - DateUtils.intersectDates bugfixed.
+
 ## v1.9.0
- - New DateUtils.isSameDay function
+ - Update of TypeScript.
  - Introduction of jest.js
 
 ## Older Versions
