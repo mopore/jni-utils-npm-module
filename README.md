@@ -1,3 +1,15 @@
+```
+     ▄█ ███▄▄▄▄    ▄█       ███    █▄      ███      ▄█   ▄█          ▄████████ 
+    ███ ███▀▀▀██▄ ███       ███    ███ ▀█████████▄ ███  ███         ███    ███ 
+    ███ ███   ███ ███▌      ███    ███    ▀███▀▀██ ███▌ ███         ███    █▀  
+    ███ ███   ███ ███▌      ███    ███     ███   ▀ ███▌ ███         ███        
+    ███ ███   ███ ███▌      ███    ███     ███     ███▌ ███       ▀███████████ 
+    ███ ███   ███ ███       ███    ███     ███     ███  ███                ███ 
+    ███ ███   ███ ███       ███    ███     ███     ███  ███▌    ▄    ▄█    ███ 
+█▄ ▄███  ▀█   █▀  █▀        ████████▀     ▄████▀   █▀   █████▄▄██  ▄████████▀  
+▀▀▀▀▀▀                                                  ▀                      
+```
+
 # What is this?
 
 Provides some utils I used often in my current projects.
@@ -7,6 +19,11 @@ These include a
 * Code to easier operate with dates, delays and arrays
 
 # Release History
+
+## v1.10.0
+ - Introduce DateUtils.createDaysForMonthString
+ - node (types) version raised to 15.x
+ - npm audit fix
 
 ## v1.9.1
  - DateUtils.intersectDates bugfixed.
