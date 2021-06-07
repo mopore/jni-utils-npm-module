@@ -1,6 +1,6 @@
 {
   "name": "jni-utils",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "description": "Provides some utils used often used in other projects.",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.20",
-    "@types/node": "^13.7.7",
+    "@types/node": "^15.12.1",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
     "eslint": "^6.8.0",
