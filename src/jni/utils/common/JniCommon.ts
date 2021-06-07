@@ -231,6 +231,29 @@ export class DateUtils {
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         return today;
     }
+
+    /**
+     * Creates an array of all days matching the passed day as a ISO string.
+     * @param monthIsoString e.g. "2021-01" or "2019-03-05"
+     * @returns 
+     */
+    static createDaysForMonthString(monthIsoString: string): Date[]{
+        // Shorten the input string, in case a complete iso date has been passed.
+        const secureMonthString = monthIsoString.substr(0, 7);
+        let createdDay = new Date(`${secureMonthString}-01`);
+        const origMonthIndex = createdDay.getMonth();
+
+        let daysOfMonth: Date[] = [];
+        let lastMonthIndex = origMonthIndex; 
+        do {
+            daysOfMonth = [...daysOfMonth, createdDay];
+            createdDay = new Date(createdDay);
+            createdDay.setDate(createdDay.getDate() + 1);
+            lastMonthIndex = createdDay.getMonth();
+        } while (lastMonthIndex === origMonthIndex)
+        return daysOfMonth;
+    }
+ 
 }
 
 export class Assert {

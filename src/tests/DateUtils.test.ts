@@ -14,7 +14,7 @@ describe("DateUtils", () => {
         const date3 = new Date("2021-01-31");
         const date4 = new Date(2021,0,31);
         it("two manually dates created dates for 2021-01-31 are the same day", () => {
-            expect(JniCommon.DateUtils.isSameDay(date3, date3)).toBeTruthy();
+            expect(JniCommon.DateUtils.isSameDay(date3, date4)).toBeTruthy();
         });
     });
     describe("createDateArray", () => {
@@ -43,6 +43,18 @@ describe("DateUtils", () => {
             expect(dateArray.length).toEqual(3);
             expect(dateArray[0]).toEqual(new Date("2021-01-02"));
             expect(dateArray[2]).toEqual(new Date("2021-01-04"));
+        });
+    });
+    describe("createDaysForMonthString", () => {
+        it("should return an array of 31 days", () => {
+            const inputIsoString = "2021-01-31";
+            const result = DateUtils.createDaysForMonthString(inputIsoString);
+            expect(result.length).toEqual(31);
+        });
+        it("should return an array of 30 days", () => {
+            const inputIsoString = "2021-04";
+            const result = DateUtils.createDaysForMonthString(inputIsoString);
+            expect(result.length).toEqual(30);
         });
     });
 });
