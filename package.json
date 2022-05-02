@@ -34,10 +34,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JensNixdorf/jni-utils-npm-module.git"
+    "url": "git+https://github.com/mopore/jni-utils-npm-module.git"
   },
   "bugs": {
-    "url": "https://github.com/JensNixdorf/jni-utils-npm-module/issues"
+    "url": "https://github.com/mopore/jni-utils-npm-module/issues"
   },
-  "homepage": "https://github.com/JensNixdorf/jni-utils-npm-module#readme"
+  "homepage": "https://github.com/mopore/jni-utils-npm-module#readme"
 }
